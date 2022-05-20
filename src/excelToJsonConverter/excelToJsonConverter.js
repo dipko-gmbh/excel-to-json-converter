@@ -65,6 +65,8 @@ function mapTenantData(tenant,bathName, purchaseData, entryData) {
             "checkOut": dateFormat(item["Checkout am"], item["Checkout um"]),
             "unconsumed": item["Entwertung widerrufen"] === "TRUE"
         }))
+
+        console.log(`Uploading ${tenant} for ${bathName}`);
         uploadDataToElastic(correctItem)
     });
     

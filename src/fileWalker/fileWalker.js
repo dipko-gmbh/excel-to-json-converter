@@ -39,7 +39,7 @@ const fileWalker = async (excel_folder_path) => {
                 files
                     .filter(f => f.endsWith('.xlsx') && !f.startsWith('Zugangsdaten_fuer_'))
                     .map(f => {
-                        console.log('f:', f);
+                        console.log(`parsing File: ${f}`);
                         const purchaseData = convertExcelToObject(`${excel_folder_path}/${tenant}/${f}`);
                         const entryData = convertExcelToObject(`${excel_folder_path}/${tenant}/Zugangsdaten_fuer_${f}`);
 
