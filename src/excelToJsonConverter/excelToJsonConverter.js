@@ -12,6 +12,16 @@ function generateJSONFile(data) {
 }
 
 
+const dateFormat = (date, time) =>{
+    const date = DateTime.fromFormat(`${date} ${time}`, "dd.mm.yyyy hh:mm:ss", { locale: "de" });
+    
+    return {
+        "@date": date.toISO(),
+        "weekday": date.toFormat("cccc"),
+        "time": date.toFormat('hh:mm:ss'),
+        "weekOfYear": date.toFormat('W')
+    }
+}
 
 function mapTenantData(tenant,bathName, purchaseData, entryData) {
     let resultPurchaseData = [];
@@ -28,7 +38,7 @@ function mapTenantData(tenant,bathName, purchaseData, entryData) {
             productType: item["Produktart"],
             entityID: item["EntitätsID"],
             entityTitle: item["Entitätstitel"],
-            bookingDate: DateTime.fromFormat(`${item["gebucht am"]} ${item["gebucht um"]}`, "dd.mm.yyyy hh:mm:ss", { locale: "de" }).toISO(),
+            bookingDate: dateFormat(item["gebucht am"], item["gebucht um"]),
             bookignTime: item["gebucht um"],
             startDate: item["gültig von"],
             endDate: item["gültig bis"],
@@ -57,8 +67,6 @@ function mapTenantData(tenant,bathName, purchaseData, entryData) {
         const entryDataForPurchase = purchaseData.filter( p => p["Ticket ID"] === correctItem.ticketID)
         correctItem['purchase'] = entryDataForPurchase
     });
-    console.log(mappedData)
-
 }
 
 
