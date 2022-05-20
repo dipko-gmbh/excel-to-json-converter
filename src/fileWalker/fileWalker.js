@@ -1,5 +1,6 @@
 const fs = require('fs').promises
 const xlsx = require('xlsx');
+const { mapTenantData } = require('../excelToJsonConverter/excelToJsonConverter');
 
 const convertExcelToObject = (path) => {
         // Read the file using pathname
@@ -22,23 +23,11 @@ const convertExcelToObject = (path) => {
     return parsedData;
 }
 
-
-const funcFromGerigi = (tenant, bathName, purchaseData, entryData) => {
-    console.log('tenant:', tenant);
-    console.log('bathName:', bathName);
-    console.log('purchaseData:', purchaseData[0]);
-    console.log('entryData:', entryData[0]);
-}
-
-
-
 const fileWalker = async (excel_folder_path) => {
     try {
         const tenants = await fs.readdir(excel_folder_path)
 
         await tenants.forEach(async tenant => {
-            console.log('tenant:', tenant);
-
             try {
                 const path = excel_folder_path + '/' + tenant
                 const stat = await fs.lstat(path)

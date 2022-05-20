@@ -37,7 +37,7 @@ function mapTenantData(tenant,bathName, purchaseData, entryData) {
             disabledTicket: item["invalidiert von"],
             dipkoID: item["Dipko ID"],
             firstName: item["Vorname"],
-            secondName: item["Nachname"],
+            lastName: item["Nachname"],
             email: item["Email"],
             plz: item["PLZ"],
             city: item["Stadt"],

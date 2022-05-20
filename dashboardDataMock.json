@@ -1,0 +1,65 @@
+{
+    "tenant": "Juelich", 
+    "bathName": "Aquafitnesskurse_im_Hallenbad_Juelich",
+    "purchaseNumber": 21278,
+    "productID": 165,
+    "ticketID": "0841f1f9-8842-4bf3-8d20-f0c07c812c26",
+    "productName": "10er Karte Erwachsene ab 18 Jahre",
+    "productType": "BathTicket",
+    "entityID": 15,
+    "entityTitle": "10er Karten Freibad Feuchtasia",
+    "booking": {
+        "@date": "2022-05-16T10:25:00.000Z",
+        "weekday": "Monday",
+        "time": "10:25",
+        "weekOfYear": 20
+    },
+    "startDate": "2022-05-16T10:25:00.000Z",
+    "endDate": "2027-05-17T10:25:00.000Z",
+    "startTime": "09:00",
+    "endTime": "20:00",
+    "disabledTicket": null,
+    "dipkoID": 59,
+    "firstName": "Matea",
+    "lastName": "Polat",
+    "email": "matea.polat@hotmail.com",
+    "plz": "90475",
+    "city": "Nürnberg",
+    "country": "DE",
+    "price": 40.99,
+    "priceTax.": 0.07,
+    "paymentStatus": "success",
+    "paymentMethod": "Cash",
+    "payedPrice": 34.99,
+    "individualOffer": false,
+    "news": false,
+    "marketing": false,
+    "sex": "WOMAN",
+    "isEnergyCustomer": false,
+    "invalidatedAt": null,
+    "invalidatedBy": null,
+    "birthDate": "19.03.1967",
+    "entryData": [
+        {
+            "checkInDate": "2022-05-18T13:55:00.000Z",
+            "checkOutDate": "2022-05-18T16:55:00.000Z",
+            "checkInTime": "13:55",
+            "checkOutTime": "16:55",
+            "unconsumed": false
+        },
+        {
+            "checkInDate": "2022-05-19T11:00:00.000Z",
+            "checkOutDate": "2022-05-19T14:45:00.000Z",
+            "checkInTime": "11:00",
+            "checkOutTime": "14:45",
+            "unconsumed": false
+        },
+        {
+            "checkInDate": "2022-05-22T12:55:00.000Z",
+            "checkOutDate": "2022-05-22T18:55:00.000Z",
+            "checkInTime": "12:55",
+            "checkOutTime": "18:55",
+            "unconsumed": false
+        },
+    ]
+  }
