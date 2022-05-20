@@ -41,24 +41,48 @@
     "birthDate": "19.03.1967",
     "entryData": [
         {
-            "checkInDate": "2022-05-18T13:55:00.000Z",
-            "checkOutDate": "2022-05-18T16:55:00.000Z",
-            "checkInTime": "13:55",
-            "checkOutTime": "16:55",
+            "checkIn": {
+                "@date": "2022-05-18T13:55:00.000Z",
+                "time": "13:55",
+                "weekday": "Wednesday",
+                "weekOfYear": 20
+            },
+            "checkOut": { 
+                "@date": "2022-05-18T16:55:00.000Z",
+                "time": "16:55",
+                "weekday": "Wednesday",
+                "weekOfYear": 20
+            },
             "unconsumed": false
         },
         {
-            "checkInDate": "2022-05-19T11:00:00.000Z",
-            "checkOutDate": "2022-05-19T14:45:00.000Z",
-            "checkInTime": "11:00",
-            "checkOutTime": "14:45",
+            "checkIn": {
+                "@date": "2022-05-19T11:00:00.000Z",
+                "time": "11:00",
+                "weekday": "Thursday",
+                "weekOfYear": 20
+            },
+            "checkOut": { 
+                "@date": "2022-05-19T14:45:00.000Z",
+                "time": "14:55",
+                "weekday": "Thursday",
+                "weekOfYear": 20
+            },
             "unconsumed": false
         },
         {
-            "checkInDate": "2022-05-22T12:55:00.000Z",
-            "checkOutDate": "2022-05-22T18:55:00.000Z",
-            "checkInTime": "12:55",
-            "checkOutTime": "18:55",
+            "checkIn": {
+                "@date": "2022-05-20T12:55:00.000Z",
+                "time": "12:55",
+                "weekday": "Friday",
+                "weekOfYear": 20
+            },
+            "checkOut": { 
+                "@date": "2022-05-20T18:55:00.000Z",
+                "time": "18:55",
+                "weekday": "Friday",
+                "weekOfYear": 20
+            },
             "unconsumed": false
         }
     ]
