@@ -1,2 +1,5 @@
 /node_modules
 /.idea
+/excelData
+data.json
+.DS_Store
