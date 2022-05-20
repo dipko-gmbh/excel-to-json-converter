@@ -54,7 +54,7 @@ const fileWalker = async (excel_folder_path) => {
                         const purchaseData = convertExcelToObject(`${excel_folder_path}/${tenant}/${f}`);
                         const entryData = convertExcelToObject(`${excel_folder_path}/${tenant}/Zugangsdaten_fuer_${f}`);
 
-                        funcFromGerigi(tenant, f, purchaseData, entryData)
+                        mapTenantData(tenant, f, purchaseData, entryData)
                     }
                 )
             } catch (error) {
