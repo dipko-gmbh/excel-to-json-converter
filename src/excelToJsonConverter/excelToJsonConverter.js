@@ -3,24 +3,30 @@ const uploadDataToElastic = require("../uploadDataToElastic/uploadDataToElastic"
 
 
 
-const dateFormat = (dateString, timeString) =>{
+const dateFormat = (dateString, timeString) => {
+    if (!dateString || !timeString) {
+        return {
+            "@date": null,
+            "weekday": null,
+            "time": null,
+            "weekOfYear": null
+        }
+    }
+
     const date = DateTime.fromFormat(`${dateString} ${timeString}`, "dd.mm.yyyy hh:mm:ss", { locale: "de" });
     
     return {
         "@date": date.toISO(),
         "weekday": date.toFormat("cccc"),
-        "time": date.toFormat('hh:mm:ss'),
+        "time": date.toFormat('HH:mm:ss'),
         "weekOfYear": date.toFormat('W')
     }
 }
 
 
 
-function mapTenantData(tenant,bathName, purchaseData, entryData) {
-    let resultPurchaseData = [];
-    let resultEntryData = [];
-    // Loop through sheets
-    const mappedData = purchaseData.map(item=>{
+async function mapTenantData(tenant,bathName, purchaseData, entryData) {
+    await purchaseData.forEach(async (item, idx)=>{
         let correctItem = {
             tenant, 
             bathName,
@@ -63,8 +69,10 @@ function mapTenantData(tenant,bathName, purchaseData, entryData) {
             "unconsumed": item["Entwertung widerrufen"] === "TRUE"
         }))
 
-        console.log(`Uploading ${tenant} for ${bathName}`);
-        uploadDataToElastic(correctItem)
+        // console.log(`Uploading ${tenant} for ${bathName}, ${correctItem.productID}`);
+        await uploadDataToElastic(correctItem)
+        const precent = (idx + 1) / purchaseData.length * 100 
+        process.stdout.write(`${precent.toFixed(2)}% Uploading ${tenant} for ${bathName}, ${correctItem.productID}\r`);
     });
     
 }

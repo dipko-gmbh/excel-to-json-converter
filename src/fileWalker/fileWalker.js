@@ -36,14 +36,14 @@ const fileWalker = async (excel_folder_path) => {
 
                 const files = await fs.readdir(path)
 
-                files
+                await files
                     .filter(f => f.endsWith('.xlsx') && !f.startsWith('Zugangsdaten_fuer_'))
-                    .map(f => {
+                    .forEach(async f => {
                         console.log(`parsing File: ${f}`);
                         const purchaseData = convertExcelToObject(`${excel_folder_path}/${tenant}/${f}`);
                         const entryData = convertExcelToObject(`${excel_folder_path}/${tenant}/Zugangsdaten_fuer_${f}`);
 
-                        mapTenantData(tenant, f, purchaseData, entryData)
+                        await mapTenantData(tenant, f, purchaseData, entryData)
                     }
                 )
             } catch (error) {

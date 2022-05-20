@@ -3,9 +3,22 @@ const axios = require('axios');
 const BASE_URL =
     'https://search-dashboard-ukbjqckkgeqa2c2ybt2ryxp36q.eu-central-1.es.amazonaws.com';
 
+axios.interceptors.request.use(request => {
+    console.log('Starting Request', JSON.stringify(request, null, 2))
+    return request
+    })
+    
+    axios.interceptors.response.use(response => {
+    console.log('Response:', JSON.stringify(response, null, 2))
+    return response
+    })
+
 const uploadDataToElastic = async (data) => {
+    
+    
+    
     try {
-        await axios.post(
+        const res = await axios.post(
             BASE_URL + '/global/_doc',
             {
                 ...data
@@ -16,12 +29,12 @@ const uploadDataToElastic = async (data) => {
                 }
             }
         );
+
+        console.log(`Upload successfull ${res.data}`);
+        console.log('\n');
     } catch (error) {
-        console.error(error)
+        console.error('Error in uploadDataToElastic', error)
     }
-
-
-    
 };
 
 

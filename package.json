@@ -4,7 +4,7 @@
   "description": "A converter which converts Zugansdaten and Zahlungsdaten for the data dashboard",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node --max-old-space-size=4096  ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
