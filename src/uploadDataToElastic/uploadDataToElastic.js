@@ -1,5 +1,4 @@
 const axios = require('axios');
-const mockData = require('./../../dashboardDataMock.json')
 
 const BASE_URL =
     'https://search-dashboard-ukbjqckkgeqa2c2ybt2ryxp36q.eu-central-1.es.amazonaws.com';
@@ -25,6 +24,6 @@ const uploadDataToElastic = async (data) => {
     
 };
 
-await uploadDataToElastic(mockData)
+
 
 module.exports = uploadDataToElastic;
