@@ -8,10 +8,14 @@
     "productType": "BathTicket",
     "entityID": 15,
     "entityTitle": "10er Karten Freibad Feuchtasia",
-    "bookingDate": "16.05.2022",
-    "bookignTime": "10:25",
-    "startDate": "16.05.2022",
-    "endDate": "17.09.2023",
+    "booking": {
+        "@date": "2022-05-16T10:25:00.000Z",
+        "weekday": "Monday",
+        "time": "10:25",
+        "weekOfYear": 20
+    },
+    "startDate": "2022-05-16T10:25:00.000Z",
+    "endDate": "2027-05-17T10:25:00.000Z",
     "startTime": "09:00",
     "endTime": "20:00",
     "disabledTicket": null,
@@ -37,22 +41,22 @@
     "birthDate": "19.03.1967",
     "entryData": [
         {
-            "checkInDate": "18.05.2022",
-            "checkOutDate": "18.05.2022",
+            "checkInDate": "2022-05-18T13:55:00.000Z",
+            "checkOutDate": "2022-05-18T16:55:00.000Z",
             "checkInTime": "13:55",
             "checkOutTime": "16:55",
             "unconsumed": false
         },
         {
-            "checkInDate": "19.05.2022",
-            "checkOutDate": "19.05.2022",
+            "checkInDate": "2022-05-19T11:00:00.000Z",
+            "checkOutDate": "2022-05-19T14:45:00.000Z",
             "checkInTime": "11:00",
             "checkOutTime": "14:45",
             "unconsumed": false
         },
         {
-            "checkInDate": "22.05.2022",
-            "checkOutDate": "22.05.2022",
+            "checkInDate": "2022-05-22T12:55:00.000Z",
+            "checkOutDate": "2022-05-22T18:55:00.000Z",
             "checkInTime": "12:55",
             "checkOutTime": "18:55",
             "unconsumed": false
