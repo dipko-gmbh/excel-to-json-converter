@@ -1,13 +1,10 @@
-const fs = require("fs");
-const xlsx = require("xlsx");
-const path = require('path');
-const luxon = require("luxon");
+const { DateTime } = require("luxon");
 const uploadDataToElastic = require("../uploadDataToElastic/uploadDataToElastic")
 
 
 
-const dateFormat = (date, time) =>{
-    const date = DateTime.fromFormat(`${date} ${time}`, "dd.mm.yyyy hh:mm:ss", { locale: "de" });
+const dateFormat = (dateString, timeString) =>{
+    const date = DateTime.fromFormat(`${dateString} ${timeString}`, "dd.mm.yyyy hh:mm:ss", { locale: "de" });
     
     return {
         "@date": date.toISO(),
